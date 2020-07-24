@@ -7,4 +7,11 @@ def count_th(word):
     
     # TBC
     
-    pass
+    count = word.find('th')
+    # Recursive case - one substring found; look for additional substrings in
+    # what remains of the input string.
+    if count != -1:
+        return count_th(word[count + 2:]) + 1
+    
+    else:
+        return 0
